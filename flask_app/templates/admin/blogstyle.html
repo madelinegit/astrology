@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+<link rel="stylesheet" href= "{{ url_for('static', filename='css/style.css') }}">
+<!-- <link rel="stylesheet" href= "{{ url_for('static', filename='css/styleblog.css') }}"> -->
+<link rel ='icon' type= 'img/png' href="{{url_for('static', filename='imgs/img2.png')}}" alt="" width="32" height="32" class="rounded-circle me-2">
+<title>J Nurse</title>
+</head>
+<body>
+
+
+
+<nav class="navbar navbar-expand-lg navbar-dark dark container-fluid">
+    <div class="container-fluid">
+    <a class="navbar-brand" style="color:antiquewhite" href="/" >
+        <img src="{{url_for('static', filename='imgs/img2.png')}}" alt="" width="32" height="32" class="rounded-circle me-2">
+    </a>
+    <a href="/about" class="nav-title">J Nurse Astrology</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a href="/menu" class="nav-link">Menu</a>
+            </li>
+            <li class="nav-item">
+                <a href="/bloghome" class="nav-link fw-bold">Blog</a>
+            </li>
+            <li class="nav-item">
+                <a href="/book" class="nav-link">Book</a>
+            </li>
+        </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container mt-10px">
+    <div class="d-flex justify-content-center align-items-center">
+    </div>
+    <div class="text-center">
+        <h1>{{blog.title}}</h1>
+        <h2> {{blog.metatitle[0]}}</h2>
+    </div>
+    <!-- <img src="{{blog.image}}" class="img-fluid" alt="Blog Image"> -->
+    <div class = "content" styles="">{{blog.content}}</div>
+    <p class="date text-end">{{blog.date[0]}}</p>
+</div>
+
+
+
+<div class="footer style-dark">
+    <div class="footer-text ">
+        Beeboop @ Copyright 2023 | Astrology LLC
+    </div>
+    <a href="https://www.instagram.com/the.blue.throated.one/" class="footer-icon">
+        <img src="{{url_for('static', filename='imgs/insta.png')}}"></img>
+    </a>
+    </div>
+</body>

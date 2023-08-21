@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+<link rel="stylesheet" href= "{{ url_for('static', filename='css/style.css') }}">
+<link rel ='icon' type= 'img/png' href="{{url_for('static', filename='imgs/img2.png')}}" alt="" width="32" height="32" class="rounded-circle me-2">
+<title>J Norse</title>
+</head>
+<body>
+
+
+
+<nav class="navbar navbar-expand-lg navbar-dark dark container-fluid">
+    <div class="p-3 d-flex">
+        <a class="navbar-brand" style="color:antiquewhite" href="/" >
+            <img src="{{url_for('static', filename='imgs/img2.png')}}" alt="" width="32" height="32" class="rounded-circle me-2">
+        </a>
+        <button type = "button" class = "dash-button">
+            <a href="/dashboard" class="nav-title" style="font-weight: bolder;">Dashboard</a>
+        </button>
+    </div>
+</nav>
+
+<div class="messages text-secondary text-center">
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for m in messages %}
+                    {{m}}
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+</div>
+
+<div class="container mt-10px">
+    <h1 class="text-center dashhead mr-3">Mailing List</h1>
+    <div class="text-center">
+        <h1></h1>
+        </div>
+        <div class="d-flex align-center align-items-center">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th> Email:</th>
+                        <th>Delete: </th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for mailinglist in all_mailinglist %}
+                    <tr>
+                        <td>{{mailinglist.email}}</td>
+                        <td><a href="/delete_email/{{mailinglist.id[0]}}"> Delete</a></td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+<div class="dashletter" style="height: 200px;"></div>
+
+<div class="footer style-dark">
+    <div class="footer-text ">
+        Beeboop @ Copyright 2023 | Astrology LLC
+    </div>
+    <a href="https://www.instagram.com/the.blue.throated.one/" class="footer-icon">
+        <img src="{{url_for('static', filename='imgs/insta.png')}}"></img>
+    </a>
+    </div>
+</body>

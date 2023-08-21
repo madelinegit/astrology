@@ -1,0 +1,165 @@
+body {
+margin: 0;
+font-family: Arial, sans-serif;
+width: 100%;
+background-color: black;
+color: #faebd7
+/* justify-content: center; */
+}
+
+@media (max-width: 576px) {
+body {
+    font-size: 12px;
+}
+}
+
+.nav-title, a {
+    color: inherit;
+    text-decoration: none;
+
+}
+.nav-title:hover {
+    color: #faebd7;
+    font-weight: bolder;
+    transform: translateY(-1px);
+}
+li:hover {
+    transform: translateY(-1px);
+}
+
+.navbar-brand:hover {
+    font-weight: bolder;
+    transform: scale(1.09);
+}
+
+/* .adminnav { */
+    /* padding-left: 100px; */
+/* } */
+/* Make some nav stuff go to the right */
+
+/* ADMIN DASHBOARD */
+
+td {
+    color: #7eab8d;
+    /* font-size: 1.5em; */
+    /* text-decoration: none; */
+}
+.dash {
+    color: #7eab8d;
+    font-size: 1.5em;
+}
+
+.dashhead {
+    color: #7eab8d;
+    font-size: 3em;
+}
+
+.dash-button {
+    background: linear-gradient(to top, #7eab8d, #000000);
+    color: #faebd7;
+    border-radius: 8px;
+    /* margin-right: 50px; */
+}
+.dash-button:hover {
+    font-weight: bolder;
+    /* background-color: #a64500; */
+    transform: scale(1.09);
+}
+
+.dashletter {
+    height: 200px;
+    background: linear-gradient(to top, #7eab8d, #000000);
+    padding: 20px;
+    margin: 0 auto;
+}
+
+
+
+
+/* BLOG PAGE RENDER*/
+.content {
+    white-space: pre-wrap;
+}
+
+/*  random tbh */
+.add-padding {
+padding-bottom: 20px;
+padding-top: 10px;
+color:antiquewhite
+}
+
+/* BOOKING */
+.otherletter {
+    background: linear-gradient(to top,#FCA311, #000000);
+    /* (to top,#FCA311, #000000, #FCA311, #000000); */
+    color:antiquewhite;
+    padding: 20px;
+    margin: 0 auto;
+
+}
+
+
+/* Adjust font size and padding for mobile nav links */
+/* @media (max-width: 767px) { */
+    /* .navbar-nav .nav-link { */
+        /* font-size: 14px; Adjust font size as needed */
+        /* padding: 0.25rem 0.5rem; Adjust padding as needed */
+    /* } */
+/* } */
+/*  */
+
+/* I think this is on the booking page */
+
+/* .another { */
+    /* background: linear-gradient(to top, #000000 #FCA311); */
+    /* height: 100px; */
+    /* padding: 20px; */
+    /* margin: 0 auto; */
+/* } */
+
+
+/* NEWSLETTER */
+
+.newsletter {
+    background: linear-gradient(to bottom, #8f1d14, #000000);
+    background: linear-gradient(to bottom,#FCA311, #000000);
+    /* border-top: #000000 5px; */
+    color:antiquewhite;
+    /* size-adjust: ; */
+    padding: 20px;
+    margin: 0 auto;
+}
+
+.newsform input {
+    border-radius: 8px;
+    /* font-size: 1em; */
+    padding-left: 10px;
+}
+.newform-button {
+    background: linear-gradient(to top, #8f1d14, #FCA311);
+    color: #faebd7;
+    margin-left: 10px;
+}
+.newform-button:hover {
+    font-weight: bolder;
+    background-color: #a64500;
+    transform: scale(1.09);
+}
+
+
+/* FOOTER */
+.footer {
+    /* background: linear-gradient(to bottom, #8f1d14, #000000); */
+    width: 100%;
+    color:antiquewhite;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+
+
+
+

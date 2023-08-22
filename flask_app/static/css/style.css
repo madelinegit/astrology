@@ -1,11 +1,11 @@
 body {
-margin: 0;
+/* margin: 0; */
 font-family: Arial, sans-serif;
 width: 100%;
 background-color: black;
 color: #faebd7
 /* justify-content: center; */
-}
+}e
 
 @media (max-width: 576px) {
 body {
@@ -31,10 +31,10 @@ li:hover {
     font-weight: bolder;
     transform: scale(1.09);
 }
-
-/* .adminnav { */
-    /* padding-left: 100px; */
-/* } */
+/*  */
+.adminnav {
+    padding-left: 100px;
+}
 /* Make some nav stuff go to the right */
 
 /* ADMIN DASHBOARD */
@@ -82,11 +82,11 @@ td {
 }
 
 /*  random tbh */
-.add-padding {
-padding-bottom: 20px;
-padding-top: 10px;
-color:antiquewhite
-}
+/* .add-padding { */
+/* padding-bottom: 20px; */
+/* padding-top: 10px; */
+/* color:antiquewhite */
+/* } */
 
 /* BOOKING */
 .otherletter {

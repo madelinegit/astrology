@@ -1,11 +1,10 @@
 from flask_app import app
 from flask import render_template, redirect, session, request, flash
+import base64
 from flask_app.models.models_user import User
 from flask_app.models.models_blog import Blog
-# from flask_app.controllers.controllers_users
 from flask_app.config.mysqlconnection import connectToMySQL
 
-# app = Flask(__init__)
 
 @app.route('/')
 def index():
@@ -53,17 +52,15 @@ def blog1():
 def blogstyle():
     return render_template('/public/blogstyle.html')
 
-
-
 ################################################################
 
 @app.route('/dashboard')
 def dashboard():
     if 'user_id' not in session:
         return redirect('/login')
-    user_data = {
-        'id' : session ['user_id']
-        }
+    # user_data = {
+    #     'id' : session ['user_id']
+    #     }
     # print("user_data: ", user_data)
     # user = User.get_one(user_data)user=user,
     all_blogs = Blog.get_all()
@@ -76,12 +73,16 @@ def create():
         return redirect('/login')
     return render_template('admin/blog_create.html')
 
+#ADD VALIDATIONS?
 @app.route("/blog_create", methods=["POST"])
 def blog_create():
     print("request.form", request.form)
+    # print("request.files****************", request.files['image'].read())
     # isValid=Blog.blog_validate(request.form)
     # if not isValid:
         # return redirect('/blog_create')
+    image_data_binary = request.files['image'].read()
+    image_data = (base64.b64encode(image_data_binary)).decode('ascii')
     newdata = {
             'title' : request.form['title'],
             'metatitle' : request.form['metatitle'],
@@ -89,10 +90,10 @@ def blog_create():
             'date' : request.form['date'],
             'category' : request.form['category'],
             'content' : request.form['content'],
+            'image' : image_data,
             'user_id' : session['user_id']
         }
-
-    print(newdata)
+    print("****NEWDATA*****", newdata)
     id=Blog.blog_create(newdata) ####NEWDATA
     print("blog saved")
     return redirect('/dashboard')
@@ -103,8 +104,7 @@ def blog_read(id, slug):
         'id' : id
     }
     blog=Blog.get_one_blog(blog_data)
-    print("BLOG: ",blog)
-    print(blog.metatitle)
+    # print("BLOG: ", blog.content)
     return render_template('/admin/blogstyle.html', blog=blog)
 
 @app.route('/blog_edit/<int:id>')
@@ -122,18 +122,29 @@ def blog_read_edit(id):
 def blog_update(id):
     if 'user_id' not in session:
         return redirect('/login')
-    isValid=Blog.validateBlog(request.form)
-    if not isValid:
-        flash("Fill all forms, & use proper-slug-format.")
-        print("line 139 controller")
-        return redirect(f'/blog_edit/{id}')
+    image_data_binary = request.files['image'].read()
+    image_data = (base64.b64encode(image_data_binary)).decode('ascii')
+    newdata= {
+        'title' : request.form['title'],
+        'metatitle' : request.form['metatitle'],
+        'slug' : request.form['slug'],
+        'date' : request.form['date'],
+        'category' : request.form['category'],
+        'content' : request.form['content'],
+        'image' : image_data
+        }
+    # isValid=Blog.validateBlog(request.form)
+    # if not isValid:
+    #     flash("Fill all forms, & use proper-slug-format.")
+    #     print("line 139 controller")
+    #     return redirect(f'/blog_edit/{id}')
     print("controller line 139")
     # data = {
     #     "id" : id
     # }
-    print("***DATA FOR MODEL ln144****")
-    print("request.form", request.form)
-    Blog.update(request.form, id)
+    # print("***DATA FOR MODEL ln144****")
+    # print("request.form", request.form)
+    id=Blog.update(newdata, id)
     return redirect('/dashboard')
 
 @app.route('/delete/<int:id>')

@@ -5,21 +5,27 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 <link rel="stylesheet" href= "{{ url_for('static', filename='css/style.css') }}">
+<link rel="stylesheet" href= "{{ url_for('static', filename='css/dash.css') }}">
 <link rel ='icon' type= 'img/png' href="{{url_for('static', filename='imgs/img2.png')}}" alt="" width="32" height="32" class="rounded-circle me-2">
 <title>J Norse</title>
 </head>
 <body>
 
-
-
 <nav class="navbar navbar-dark-lg dark container-fluid">
-    <div class="p-3 d-flex">
+    <div class="container-fluid">
         <a class="navbar-brand " style="color:antiquewhite" href="/" >
             <img src="{{url_for('static', filename='imgs/img2.png')}}" alt="" width="32" height="32" class="rounded-circle me-2">
         </a>
-        <button type = "button" class = "dash-button">
-            <a href="/dashboard" class="nav-title" style="font-weight: bolder;">Dashboard</a>
-        </button>
+        <div class="d-flex justify-content-right">
+            <ul class="navbar ml-auto" style ="list-style: none;">
+                <li class="nav-item ml-auto">
+                    <button class="dash-button m-1"><a href="/admin/mailinglist" class="nav-link">Mailing List</a></button>
+                </li>
+                <li class="nav-item">
+                    <button class="dash-button m-1"><a href="/logout" class="nav-link">Logout</a></button>
+                </li>
+            </ul>
+        </div>
     </div>
 </nav>
 
@@ -35,59 +41,54 @@
 
 <div class="container mt-10px">
     <h1 class="text-center dashhead mt-3">All Blogs Dashboard</h1>
-    <div class="text-center">
-        <h1></h1>
-        </div>
-        <!-- <p class="text-left">All Posted Blogs:</p> -->
-        <div class="justify-items-end">
-            <a href="/create" class="btn btn-success dash mg-3" > Create New Blog</a>
-        </div>
-        <!-- put this to the right -->
-        <div class="d-flex align-center align-items-center">
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th> Title:</th>
-                        <th> Meta-Title:</th>
-                        <th> Slug: </th>
-                        <th> Date: </th>
-                        <th> Category:</th>
-                        <th>Author:  </th>
-                        <th>Actions: </th>
-                    </tr>
-                </thead>
-                <tbody>
+    <div class="d-flex align-center align-items-center">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th> Title:</th>
+                    <th> Meta-Title:</th>
+                    <th> Slug: </th>
+                    <th> Date: </th>
+                    <th> Category:</th>
+                    <th>Author:  </th>
+                    <th>Actions: </th>
+                </tr>
+            </thead>
+            <tbody>
                 {% for blog in all_blogs %}
-                    <tr>
-                        <td>{{blog.title}}</td>
-                        <td>{{blog.metatitle}}</td>
-                        <td>{{blog.slug}}</td>
-                        <td>{{blog.date}}</td>
-                        <td>{{blog.category}}</td>
-                        <td>{{blog.cook.firstname[0]}}</td>
-                        <!-- <td>{{blog.cook.firstname}}</td> -->
-                        <td>
-                            <!-- <a href="/blog/{{blog.id[0]}}/{{blog.slug[0]}}">View</a> -->
-                            <!-- it was [[blog.id[0]]] -->
-                            <a href="/blog/{{blog.id}}/{{blog.slug}}">View</a>
-                        <!-- % if blog.user_id == session.user_id % -->
-                        <a href="/blog_edit/{{blog.id}}">| Edit |</a> <a href="/delete/{{blog.id}}"> Delete</a></td>
-                        <!-- % endif % -->
-                    </tr>
+                <tr>
+                    <td class="fw-bolder">{{blog.title}}</td>
+                    <td>{{blog.metatitle}}</td>
+                    <td>{{blog.slug}}</td>
+                    <td>{{blog.date}}</td>
+                    <td>{{blog.category}}</td>
+                    <td>{{blog.cook.firstname[0]}}</td>
+                    <td> <div class="d-flex">
+                        <a href="/blog/{{blog.id}}/{{blog.slug}}" class="btn dash-button dash m-1">View</a>
+                        <a href="/blog_edit/{{blog.id}}" class="btn dash-button dash m-1">Edit</a><a href="/delete/{{blog.id}}" class="btn dash-button dash m-1"> Delete</a>
+                    </div></td>
+                </tr>
                 {% endfor %}
-                </tbody>
-            </table>
-        </div>
+            </tbody>
+        </table>
     </div>
+</div>
 
-<div class="dashletter"></div>
+<div class="text-center align-items-center pt-3 mb-4">
+    <a href="/create" class="btn dash-button dash m-2" > Create New Blog</a>
+    <a href="/bloghome" class="btn dash-button dash m-2" > Public Blog Home</a>
+</div>
+
+<div class="dashletter"><br><br><p class="text-center">&#128009;</p></div>
 
 <div class="footer style-dark">
-    <div class="footer-text ">
-        Beeboop @ Copyright 2023 | Astrology LLC
+    <div style="color:#d3d3d3">
+        Private Admin Page | Astrology LLC
     </div>
     <a href="https://www.instagram.com/the.blue.throated.one/" class="footer-icon">
         <img src="{{url_for('static', filename='imgs/insta.png')}}"></img>
     </a>
-    </div>
+</div>
+
 </body>
+</html>

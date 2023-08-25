@@ -7,12 +7,6 @@ h2 {
     padding-top:20px;
 }
 
-
-/* .dark-bg { */
-    /* background-color: #202020; */
-    /* color: white; */
-/* } */
-
 .login-container, .register-container {
     display: flex;
     justify-content: center;

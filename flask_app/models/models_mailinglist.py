@@ -2,7 +2,7 @@ from flask_app import app
 from flask_app.config.mysqlconnection import connectToMySQL
 from flask import flash
 import re
-db='blogs'
+db='blogs_astro'
 EMAIL_REGEX = re.compile(r'^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+$')
 PASSWORD_REGEX = re.compile("^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$")
 
@@ -11,7 +11,7 @@ class MailingList:
         self.id = data['id'],
         self.email = data['email']
 
-    #REGISTER USER
+    #REGISTER NEW MAILING LIST
     @classmethod
     def saveMailingList (cls, newdata):
         query="""
@@ -21,6 +21,7 @@ class MailingList:
         print("ran mailing list save query")
         return connectToMySQL(db).query_db(query,newdata)
 
+    #MAILING LIST GET ALL ADMIN PAGE
     @classmethod
     def GetAllMailing(cls):
         query = "SELECT * FROM mailinglist;"

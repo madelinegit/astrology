@@ -1,4 +1,3 @@
-
 import pymysql.cursors
 
 class MySQLConnection:
@@ -15,6 +14,8 @@ class MySQLConnection:
         with self.connection.cursor() as cursor:
             try:
                 query = cursor.mogrify(query, data)
+                #spits out a string, that mogrifies the template & data into a string
+                #binary data can NOT be represented as a string
                 print("Running Query:", query)
                 executable = cursor.execute(query, data)
                 if query.lower().find("insert") >= 0:

@@ -7,11 +7,9 @@
 <link rel="stylesheet" href= "{{ url_for('static', filename='css/style.css') }}">
 <link rel="stylesheet" href= "{{ url_for('static', filename='css/stylemenu.css') }}">
 <link rel ='icon' type= 'img/png' href="{{url_for('static', filename='imgs/img2.png')}}" alt="" width="32" height="32" class="rounded-circle me-2">
-<title>J Norse</title>
+<title>Justin Jyotish Astrology</title>
 </head>
 <body>
-
-
 
 <nav class="navbar navbar-expand-lg navbar-dark dark container-fluid">
     <div class="container-fluid">
@@ -19,9 +17,7 @@
             <a class="navbar-brand" style="color:antiquewhite" href="/" >
                 <img src="{{url_for('static', filename='imgs/img2.png')}}" alt="" width="32" height="32" class="rounded-circle me-2">
             </a>
-        <!-- </div> -->
-        <!-- <div class=" d-flex justify-content-center pl-3"> -->
-                <a href="/about" class="nav-title">J Nurse Astrology</a>
+                <a href="/about" class="nav-title">Justin Jyotish Astrology</a>
         </div>
         <div class="d-flex justify-content-right">
             <ul class="navbar-nav ml-auto">
@@ -29,10 +25,10 @@
                     <a href="/menu" class="nav-link">Menu</a>
                 </li>
                 <li class="nav-item">
-                    <a href="/bloghome" class="nav-link fw-bold">Blog</a>
+                    <a href="/bloghome" class="nav-link">Blog</a>
                 </li>
                 <li class="nav-item">
-                    <a href="/book" class="nav-link">Book</a>
+                    <a href="/book" class="nav-link fw-bold">Book</a>
                 </li>
             </ul>
         </div>
@@ -41,28 +37,23 @@
 
 <div class="otherletter">
     <h2 class="text-center">Booking</h2>
-    <p class="text-center pb-5">Mrem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae odio eget. Sed vitae odio eget</p>
+    <p class="text-center">Mrem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae odio eget. Sed vitae odio eget</p>
 
-<!-- <i class="bi bi-arrow-right"> -->
 <!-- Calendly inline widget begin -->
-<!-- <div class="aboutsec"> -->
-<!-- <h4 class="text-left"></h4> -->
-    <div class="calendly-inline-widget" data-url="https://calendly.com/mgalldev/30min?primary_color=be610c" style="min-width:320px;height:700px;">
+    <div class="calendly-inline-widget" data-url="https://calendly.com/justin-jyotish/vedic-reading/primary_color=be610c" style="min-width:320px;height:700px;">
     </div>
     <div class="d-flex justify-content-left">
-        <a href="/book" class=""><button type="button" class="back-button" style="m-6" > &larr; Back to Menu </button></a>
+        <a href="/menu"><button class="newform-button btn m-4"> &larr; Back to Menu </button></a>
     </div>
-<!-- </div> -->
-
 <!-- Calendly inline widget end -->
+
 </div>
-<!-- <div class="another"></div> --><!--didnt work ^^ with css -->
+
 <div class="newsletter ">
     <h2 class="text-center">Newsletter</h2>
     <p class="text-center">Monthly Astro-Alerts, No Spam.</p>
     <form action="/mailinglist" method="post" class="newsform d-flex justify-content-center">
-        <input type="email" id="email" name="email" class="newsform" styles="" placeholder="Your Email" required>
-        <!-- Styles part is incorrect -->
+        <input type="email" id="email" name="email" class="newsform" placeholder="Your Email" required>
         <button type="submit" class= "newform-button btn">Subscribe</button>
     </form>
 </div>
@@ -70,7 +61,7 @@
 
 <div class="footer style-dark">
     <div class="footer-text ">
-        Beeboop @ Copyright 2023 | Astrology LLC
+        Justin Jyotish @ Copyright 2023 | Astrology LLC
     </div>
     <a href="https://www.instagram.com/the.blue.throated.one/" class="footer-icon">
         <img src="{{url_for('static', filename='imgs/insta.png')}}"></img>

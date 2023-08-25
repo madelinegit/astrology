@@ -1,0 +1,54 @@
+h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    margin-top: 20px;
+    text-align: center;
+    text-shadow: 5px 5px 5px #505050;
+}
+
+h2 {
+    font-size: 16px;
+    font-style: italic;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+p {
+    font-size: 14px;
+    line-height: 1.6;
+}
+.author {
+    text-shadow: 2px 2px #505050;
+}
+
+@media (max-width: 768px) {
+    p, h2 {
+        font-size:  12px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+/* BLOG PAGE RENDER*/
+.content {
+    white-space: pre-wrap;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.blog {
+    margin-top: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 8px;
+    border-color: #505050;
+    border-width: thick;
+    border-style: groove;
+}
+
+/* BOOKING */
+.otherletter {
+    background: linear-gradient(to top,#ff8b00, #393e46);
+    /* (to top,#FCA311, #000000, #FCA311, #000000); */
+    /* color:antiquewhite; */
+    padding: 20px;
+    margin: 0 auto;
+}

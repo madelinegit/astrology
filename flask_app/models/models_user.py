@@ -2,9 +2,7 @@ from flask_app import app
 from flask_app.config.mysqlconnection import connectToMySQL
 from flask import flash
 import re
-# from flask_bcrypt import Bcrypt
-# bcrypt=Bcrypt(app)
-db='blogs'
+db='blogs_astro'
 EMAIL_REGEX = re.compile(r'^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+$')
 PASSWORD_REGEX = re.compile("^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$")
 
@@ -20,14 +18,13 @@ class User:
     #REGISTER USER
     @classmethod
     def save (cls, newdata):
-        print('save attempt')
         query="""
         INSERT INTO users (firstname, email, password)
         VALUES (%(firstname)s, %(email)s, %(password)s);
         """
         return connectToMySQL(db).query_db(query,newdata)
 
-    #ADD TO MAILING LIST
+    #NEW BLOG
     @classmethod
     def blog_create (cls, newdata):
         query="""
@@ -35,22 +32,6 @@ class User:
         VALUES (%(email)s);
         """
         return connectToMySQL(db).query_db(query,newdata)
-
-    # #Used anywhere?
-    # @classmethod
-    # def get_one(cls, data):
-    #     query = """
-    #         SELECT * FROM users
-    #         WHERE id = %(id)s;
-    #         """
-    #     results = connectToMySQL(db).query_db(query, data)
-    #     print("get_one user cls(results[0]) ", cls(results[0]))
-    #     print("get_one user results: ", results)
-    #     if len(results) < 1:
-    #         #flash something
-    #         return False
-    #     # print("get_one user cls(results[0].data) ", cls(results[0].data))
-    #     return cls(results[0])
 
     #LOGIN GET FROM NAME
     @classmethod
@@ -61,26 +42,9 @@ class User:
                 """
         print("ran query")
         results = connectToMySQL(db).query_db(query,data)
-        print("results from model: ",results[0])
-        # if len(results)<1:
-        #     print("GetName: no results, returns false")
-        #     return False
-        print("GetName had result")
-        print (results[0])
-        return results[0]
+        return results
 
-    # getName("Admin")
-
-    # @classmethod
-    # def get_all(cls, data):
-    #     query = "SELECT * FROM users;"
-    #     results = connectToMySQL(db).query_db(query)
-    #     users = []
-    #     for row in results:
-    #         users.append(cls(row), data)
-    #     return users
-
-
+    #USED??
     @classmethod
     def getEmail(cls, data):
         query= """
@@ -88,16 +52,11 @@ class User:
             WHERE email = %(email)s;
             """
         results= connectToMySQL(db).query_db(query, data)
-        print("results from model:", results)
         if len(results) < 1:
-            print ("came back false")
             return False
-        print("one result")
-        print("results[0]: ", results[0])
-        print("results: ",results)
-        print("password results: ",results[0]['password'])
         return cls(results[0])
 
+    #Validates New Admin Account from User Controller
     @staticmethod
     def validate(users):
         isValid = True

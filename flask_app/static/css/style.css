@@ -5,11 +5,10 @@ background-color: #393e46;
 color: #f7f7f7
 }
 @media (max-width: 576px) {
-body {
-    font-size: 12px;
+body p {
+    font-size: 10px;
 }
 }
-
 /* NAVBAR STYLE */
 .nav-title, a, .nav-link {
     color: inherit;
@@ -43,8 +42,17 @@ body {
 .newform-button:hover {
     font-weight: bolder;
     background-color: #5c636e;
-    transform: scale(1.09);
+    box-shadow: 2px 2px 5px #ff8b00;
+    transform: scale(1.01);
     color: #f7f7f7;
+}
+
+.logo {
+    width: 300px;
+}
+
+.logo {
+    border-radius: 8px;
 }
 
 /* GENERAL FOOTER STYLE */

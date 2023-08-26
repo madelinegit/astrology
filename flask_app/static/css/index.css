@@ -1,0 +1,14 @@
+.ancient {
+    text-shadow: 2px 2px 5px #ff8b00;
+}
+.headshot {
+    width:300px;
+    border: #5c636e;
+    border: 2px solid #ccc; /* Border properties */
+    box-shadow: 5px 5px 1px #888;
+}
+@media (max-width: 576px) {
+    .headshot {
+        width: 150px;
+    }
+}

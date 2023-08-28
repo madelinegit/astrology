@@ -23,12 +23,23 @@ p {
 }
 .headshot {
     width:300px;
+    border: 4px solid #5c636e; /* Border properties */
+    /* box-shadow: 5px 5px 5px 5px #888; */
+}
+@media (max-width: 576px) {
+    .headshot {
+        width: 200px;
+    }
+}
+
+.jyotish {
+    width:300px;
     border: #5c636e;
     border: 4px solid #ccc; /* Border properties */
     /* box-shadow: 5px 5px 5px 5px #888; */
 }
 @media (max-width: 576px) {
-    .headshot {
-        width: 150px;
+    .jyotish {
+        width: 200px;
     }
 }

@@ -7,16 +7,33 @@ body {
   color: white;
 }
 
+
+@media (max-width: 768px) {
+    .calendly-inline-widget {
+        min-width: 50%; /* Adjust as needed for responsiveness */
+        height: 50%; /* Adjust as needed for responsiveness */
+    }
+}
+/* .metatitle */
+
 /* BOTH MENU & BLOG OPTIONS */
 
 .options-container {
-  display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
-  padding: 20px;
+  /* display: flex; */
+  align-items: center;
+  /* justify-content: center; */
+  /* flex-wrap: wrap; */
+  /* justify-content: space-between; */
+  /* min-height: 100px; */
+  /* padding: 50px; */
 }
 
 .option {
+  /* margin-right: 30px; */
+  /* min-height:200px; */
+  min-width:300px;
+  max-width: 600px;
   flex-basis: calc(33.33% - 20px);
   margin-bottom: 20px;
   padding: 20px;
@@ -33,26 +50,39 @@ body {
 }
 
 .option img {
-  width: 100%;
+  width: 50%;
   height: auto;
   border-radius: 8px;
 }
 
+
 .option h3 {
   margin-top: 15px;
-  font-size: 20px;
+  /* font-size: 20px; */
 }
 
-.option h4 {
-  margin-top:20px;
-  text-align: center;
-  font-style: italic;
-  font-size: 16px;
+.center-both {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* height: 100vh; */
 }
+
+/* .option h4 { */
+  /* margin-top:20px; */
+  /* text-align: center; */
+  /* font-style: italic; */
+  /* font-size: 16px; */
+/* } */
+/* @media (max-width: 768px) { */
+  /* .option h4 { */
+    /* font-size: 12px; */
+  /* } */
+/* } */
 
 .option p {
   margin-top: 20px;
-  font-size: 14px;
+  /* font-size: 14px; */
   /* text-align: justify; */
 }
 
@@ -63,14 +93,14 @@ body {
   margin-top: 15px;
 }
 
-.option-price {
-  font-size: 18px;
-  font-weight: bold;
-}
+/* .option-price { */
+  /* font-size: 18px; */
+  /* font-weight: bold; */
+/* } */
 
 /* BOTH BOOK MENU BUTTONS & READ BUTTON ON BLOG HOME */
 .book-button {
-  background-color: #fca311;
+  background-color: #ba8e4b;
   color: white;
   border: none;
   border-radius: 4px;
@@ -78,13 +108,15 @@ body {
   cursor: pointer;
   /* transition: background-color 0.2s, transform 0.2s; */
 }
-
 .book-button:hover {
-  /* background-color: #0b480d; */
-  background-color: #5c636e;
-  transform: scale(1.09);
-  box-shadow: 5px 5px 1px rgba(0, 0, 0, 0.3);
+    font-weight: bolder;
+    background-color: #5c636e;
+    box-shadow: 2px 2px 5px #ba8e4b;
+    transform: scale(1.01);
+    color: #f7f7f7;
 }
+
+
 /* A mobile nav links */
 @media (max-width: 767px) {
     .book-button {
@@ -93,22 +125,9 @@ body {
     }
 }
 
-
-/* BLOG PAGE RENDER*/
-.content {
-  white-space: pre-wrap;
-}
-.blog {
-  margin-top: 10px;
-  background-color: rgba(0, 0, 0, 0.7);
-  border-radius: 8px;
-  border-color: antiquewhite;
-  border-style: groove;
-}
-
 /* BOOKING */
 .otherletter {
-  background: linear-gradient(to top,#ff8b00, #393e46);
+  background: linear-gradient(to top,#ba8e4b, #393e46);
   /* (to top,#FCA311, #000000, #FCA311, #000000); */
   /* color:antiquewhite; */
   padding: 20px;

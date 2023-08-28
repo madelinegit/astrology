@@ -4,7 +4,7 @@
 .headshot {
     width:300px;
     border: #5c636e;
-    border: 2px solid #ccc; /* Border properties */
+    border: 2px solid #5c636e; Border properties
     box-shadow: 5px 5px 1px #888;
 }
 @media (max-width: 576px) {

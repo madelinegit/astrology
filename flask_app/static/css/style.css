@@ -5,15 +5,25 @@ background-color: #393e46;
 color: #f7f7f7
 }
 @media (max-width: 576px) {
-body p {
-    font-size: 10px;
+body, p, .nav-link, .nav-title{
+    font-size: 12px;
 }
 }
+@media (max-width: 576px) {
+    h3, h4{
+        font-size: 16px;
+    }
+    }
 /* NAVBAR STYLE */
 .nav-title, a, .nav-link {
     color: inherit;
     text-decoration: none;
 }
+/* @media (max-width: 576px) { */
+    /* .nav-link, .nav-title{ */
+        /* font-size: 12px; */
+    /* } */
+    /* } */
 .nav-title:hover, .nav-link:hover {
     color: #f7f7f7;
     font-weight: bold;
@@ -23,7 +33,7 @@ body p {
 /* NEWSLETTER  STYLE*/
 
 .newsletter {
-    background: linear-gradient(to bottom,#ff8b00, #000000);
+    background: linear-gradient(to bottom,#ba8e4b, #000000);
     padding: 20px;
     margin: 0 auto;
 }
@@ -42,7 +52,7 @@ body p {
 .newform-button:hover {
     font-weight: bolder;
     background-color: #5c636e;
-    box-shadow: 2px 2px 5px #ff8b00;
+    box-shadow: 2px 2px 5px #ba8e4b;
     transform: scale(1.01);
     color: #f7f7f7;
 }

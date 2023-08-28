@@ -17,53 +17,58 @@
             <a class="navbar-brand" style="color:antiquewhite" href="/" >
                 <img src="{{url_for('static', filename='imgs/logonav.png')}}" alt="" width="32" height="32" class="rounded-circle me-2">
             </a>
-            <a href="/about" class="nav-title">Justin Jyotish Astrology</a>
+            <a href="/" class="nav-title">Justin Jyotish Astrology</a>
         </div>
         <div class="d-flex justify-content-right">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a href="/menu" class="nav-link fw-bold">Menu</a>
+                    <a href="/about" class="nav-link">About</a>
                 </li>
                 <li class="nav-item">
-                    <a href="/bloghome" class="nav-link ">Blog</a>
+                    <a href="/menu" class="nav-link fw-bold">Readings</a>
                 </li>
                 <li class="nav-item">
-                    <a href="/book" class="nav-link">Book</a>
+                    <a href="/bloghome" class="nav-link ">Blogs</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/book" class="nav-link">Schedule</a>
                 </li>
             </ul>
         </div>
     </div>
 </nav>
-
-<div class="options-container">
-    <div class="option">
-        <img src="{{url_for('static', filename='imgs/img2.png')}}" alt="Option 1">
-        <h3>Option 1</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae odio eget libero vestibulum.</p>
+<div class="center-both">
+<div class="options-container text-center">
+    <div class="option m-4">
+        <img src="{{url_for('static', filename='imgs/90min.png')}}" class="optionimage"alt="Option 1">
+        <h3 class="">90 Minute Introduction Reading</h3>
+        <p>A 90 minute reading includes a full explanation of the chart, elemental strengths and weakness, karmic debts and blessings; as well as past, current, and future unfoldment of time in your life. Remedial practices may be offered.</p>
         <div class="option-footer">
-            <span class="option-price m-2">$300</span>
-            <a href="/book"><button class="book-button p-1" > Book Now </button></a>
+            <span class="option-price m-2">$144 - $188 <br><i>Sliding Scale</i> </span>
+            <a href="/book90"><button class="book-button p-1" > Book Now </button></a>
         </div>
     </div>
-    <div class="option">
-        <img src="{{url_for('static', filename='imgs/img2.png')}}" alt="Option 2">
-        <h3>Option 2</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae odio eget libero vestibulum.</p>
+    <div class="option m-4">
+        <img src="{{url_for('static', filename='imgs/60min.png')}}" alt="Option 2">
+        <h3 class="">In Depth Follow Up</h3>
+        <p>60 minute reading includes deepening understanding of the current karmic conditions, as well as advancements and refinement of any remedies given. You can choose to go deeper on any aspect of the chart</p>
         <div class="option-footer">
-            <span class="option-price m-2">$300</span>
-            <a href="/book"><button class="book-button p-1"> Book Now </button></a>
+            <span class="option-price m-2">$108</span>
+            <a href="/book60"><button class="book-button p-1"> Book Now </button></a>
         </div>
     </div>
-    <div class="option">
-        <img src="{{url_for('static', filename='imgs/img2.png')}}" alt="Option 3">
-        <h3>Option 3</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae odio eget libero vestibulum.</p>
+    <div class="option m-4">
+        <img src="{{url_for('static', filename='imgs/30min.png')}}" alt="Option 3">
+        <h3 class="">30 Minute Inquiry Follow Up</h3>
+        <p>If you have a short inquiry, like choosing a date and time for an important event, or any other query, this is a good option.</p>
         <div class="option-footer">
-            <span class="option-price m-2">$300</span>
-            <a href="/book"> <button class="book-button p-1"> Book Now </button></a>
+            <span class="option-price m-2">$72</span>
+            <a href="/book30"> <button class="book-button p-1"> Book Now </button></a>
         </div>
     </div>
 </div>
+</div>
+
 
 <div class="newsletter">
     <h2 class="text-center">Newsletter</h2>
@@ -82,6 +87,6 @@
         <img src="{{url_for('static', filename='imgs/insta.png')}}"></img>
     </a>
 </div>
-
+</div>
 </body>
 </html>

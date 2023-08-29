@@ -1,0 +1,53 @@
+
+/* ADMIN DASHBOARD */
+
+td {
+    color: #7eab8d;
+    font-size: 1em;
+    /* text-decoration: none; */
+}
+@media (max-width: 576px) {
+    td {
+        font-size: .5em;
+    }
+}
+
+.dash {
+    color: #7eab8d;
+    font-size: 1em;
+}
+@media (max-width: 576px) {
+    .dash {
+        font-size: .5em;
+    }
+}
+.dashhead {
+    color: #7eab8d;
+    font-size: 2em;
+}
+
+.dash-button {
+    background: linear-gradient(to top, #7eab8d, #000000);
+    color: #d3d3d3;
+    border-radius: 8px;
+    /* margin-right: 50px; */
+}
+.dash-button:hover {
+    font-weight: bolder;
+    color: #d7d7d7;
+    transform: scale(1.09);
+}
+
+.dashletter {
+    height: 200px;
+    background: linear-gradient(to top, #7eab8d, #000000);
+    padding: 20px;
+    margin: 0 auto;
+}
+
+.table {
+    border: #5c636e;
+}
+th {
+    color: #5c636e;
+}

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+<link rel="stylesheet" href= "{{ url_for('static', filename='css/style.css') }}">
+<link rel="stylesheet" href= "{{ url_for('static', filename='css/styleabout.css') }}">
+<link rel ='icon' type= 'img/png' href="{{url_for('static', filename='imgs/logo.png')}}" alt="" width="32" height="32" class="rounded-circle me-2">
+<title>Justin Jyotish Astrology</title>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark dark container-fluid">
+    <div class="container-fluid">
+        <div class="justify-content-left">
+            <a class="navbar-brand" style="color:antiquewhite" href="/" >
+                <img src="{{url_for('static', filename='imgs/newlogo.jpeg')}}" alt="" width="32" height="32" class="rounded-circle me-2 icon">
+            </a>
+            <a href="/" class="nav-title">Justin Jyotish Astrology</a>
+        </div>
+        <div class="d-flex justify-content-right">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a href="/about" class="nav-link fw-bold">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/menu" class="nav-link">Readings</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/bloghome" class="nav-link">Blogs</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/book" class="nav-link">Schedule</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="about" style="background-image: url('{{ url_for('static', filename='imgs/background.jpeg') }}')">
+    <div class="container mt-3">
+        <div class=" ">
+            <!-- justify content around flex direction row align content start flex wrap-->
+            <div class="p-5 d-flex align-items-center justify-content-center">
+                <img src="{{url_for('static', filename='imgs/headshot.jpg')}}" class="headshot rounded-circle " alt="Photograph">
+            </div>
+            <div class="pl-3 pr-3">
+                <h2 class="fw-bold ">About</h2>
+                <p>Justin has been a student of divination and esoteric sciences for over 15 years. Initially he studied in western astrological traditions and practices. In 2014 he was introduced to Jyotish, Vedic astrology, and this system felt more connected to divine inspiration than any other system he had discovered. The ordered, perfect, and meaningful way that Jyotish illustrates the world emanated a feeling of transcendental truth. He has continued to follow the path of Jyotish out of pure inspiration and love for this incredible system of knowledge and divination.<br>
+                    Justin has been a practicing asana Yogi for over 15 years and has healed himself from debilitating injuries including scoliosis, degenerative disk disease, and flat feet. He is well versed in various traditions of yoga and has applied them to healing and aligning himself. He has trained in Iyengar inspired alignment based yoga, Kundalini yoga as taught by the 3HO, and is currently studying and advancing his practice in the Shadow Yoga tradition of Shandor Remete.<br>
+                    Justin’s thirst for knowledge and eclectic interests have poised him to offer insightful and unique perspectives on personal destiny and mystical perspectives.  </p>
+            </div>
+        <div class="">
+            <div class="p-5 d-flex align-items-center justify-content-center">
+                <img src="{{url_for('static', filename='imgs/lineage.png')}}" class="jyotish rounded-circle " alt="Photograph">
+            </div>
+            <div class="pl-3 pr-3 pb-5 pt-5">
+                <h2 class="fw-bold">Jyotish Lineage</h2>
+                <p class="">What makes traditional Jyotish distinct from other astrological systems in that it is a part of a living tradition. There is a direct lineage of knowledge that has been passed from teacher to student for generations. There are many ancient books on Jyotish, but deciphering the complex and coded language of these texts is almost impossible without a guide. Justin has been blessed to find a living tradition hailing from Orissa, India, going back at least 500 years.<br>
+                    His foremost teacher, Freedom Cole of Nevada City, California has been a pivotal influence in Justin’s understanding. Justin studied with Freedom Cole for several years was introduced to the living tradition of Sri Achutananda Dasa Through him.<br>
+                    Pundit Sanjay Rath of Orissa, India, is the living paramguru of the Achutananda tradition, and without his vast wisdom none of this understanding would be brought to light.<br>
+                    Justin is currently studying in a 5 year program with Sanjay Rath and Freedom Cole. This program is focussed on the seminal Jyotish text of Rishi Parashara of ancient India. </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="newsletter">
+    <h2 class="text-center">Newsletter</h2>
+    <p class="text-center">Monthly Astro-Alerts, No Spam.</p>
+    <form action="/mailinglist" method="post" class="newsform d-flex justify-content-center">
+        <input type="email" id="email" name="email" class="newsform" styles="" placeholder="Your Email" required>
+        <button type="submit" class= "newform-button btn">Subscribe</button>
+    </form>
+</div>
+
+<div class="footer style-dark" style="background-color:black">
+    <div class="footer-text ">
+        Justin Jyotish @ Copyright 2023 | Astrology LLC
+    </div>
+    <a href="https://www.instagram.com/the.blue.throated.one/" class="footer-icon">
+        <img src="{{url_for('static', filename='imgs/insta.png')}}"></img>
+    </a>
+</div>
+
+</body>
+</html>

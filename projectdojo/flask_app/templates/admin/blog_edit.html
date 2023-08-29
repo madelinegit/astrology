@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+<link rel="stylesheet" href= "{{ url_for('static', filename='css/style.css') }}">
+<link rel="stylesheet" href= "{{ url_for('static', filename='css/dash.css') }}">
+<link rel ='icon' type= 'img/png' href="{{url_for('static', filename='imgs/img2.png')}}" alt="" width="32" height="32" class="rounded-circle me-2">
+<title>Justin Jyotish Admin</title>
+</head>
+<body>
+
+<nav class="navbar navbar-dark dark container-fluid">
+    <div class="p-3 d-flex align-items-center">
+        <a href="/" class="p-3">
+            <img src="{{url_for('static', filename='imgs/img2.png')}}" alt="" width="32" height="32" class="rounded-circle me-2">
+        </a>
+        <form action = "/dashboard" method="get"><input type="submit" value="Dashboard" class="btn dash-button"></form>
+    </div>
+</nav>
+
+<div class="container mt-10px">
+    <!-- ^ had mt-10px -->
+    <h1 class="text-center">Edit Blog</h1>
+    <div class="messages text-secondary text-center">
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for m in messages %}
+                        {{m}}
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+    </div>
+</div>
+
+<div class="container mt-5">
+    <form action="/blog_update/{{blog.id}}" enctype="multipart/form-data" method="POST">
+
+        <div class="mb-3">
+            <label for="title" class="form-label">Title: <br>{{blog.title}}</label>
+            <!-- <textarea class="form-control" id="title" name="title "required> {{blog.title}} </textarea> -->
+                <!-- Text Are Threw Error  Title -->
+            <input type="text" textarea class="form-control" id="title" name="title" autofill="{{blog.title}}" required> </input>
+        </div>
+        <div class="mb-3">
+            <label for="metatitle" class="form-label">Meta Title</label>
+            <textarea class="form-control" id="metatitle" name="metatitle"> {{blog.metatitle}} </textarea>
+        </div>
+        <div class="mb-3">
+            <label for="slug" class="form-label">Slug</label>
+            <textarea class="form-control" id="slug" name="slug" required> {{blog.slug}} </textarea>
+            <!-- <input type="text" textarea class="form-control" id="slug" name="slug" autofill="{{blog.slug[0]}}" required> -->
+        </div>
+        <div class="mb-3">
+            <label for="date" class="form-label">Date</label>
+            <input type="date" class="form-control" id="date" name="date" value="<?= date('Y-m-d') ?>" required>
+        </div>
+        <div class="mb-3">
+            <label for="category" class="form-label">Category</label>
+            <textarea class ="form-control" id="category" name="category" required>{{blog.category}}</textarea>
+        </div>
+        <div class="mb-3">
+            <label for="content" class="form-label" >Content</label>
+            <textarea class="form-control" id="content"  name="content" rows="100" required>{{blog.content}}</textarea>
+        </div>
+        <div class="mb-3">
+            <label for="image" class="form-label">Image</label>
+            <input type="file" class="form-control" id="image" name="image" accept="image/*" >
+        </div>
+        <button type="submit" class="btn dash-button mb-3">Save</button>
+    </form>
+</div>
+
+<div class="footer style-dark">
+    <div class="footer-text ">
+        Private Admin Page | Astrology LLC
+    </div>
+    <a href="https://www.instagram.com/the.blue.throated.one/" class="footer-icon">
+        <img src="{{url_for('static', filename='imgs/insta.png')}}"></img>
+    </a>
+</div>
+
+<script>
+    // Set default value for the date input to today's date
+    const dateInput = document.getElementById('date');
+    const today = new Date().toISOString().split('T')[0];
+    dateInput.value = today;
+</script>
+
+</body>
+</html>

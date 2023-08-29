@@ -38,10 +38,25 @@ def bloghome():
     print("all_blogs", all_blogs)
     return render_template('/public/bloghome.html', all_blogs=all_blogs)
 
-#BLOGHOME
+#BOOKHOME
 @app.route('/book')
 def book():
     return render_template('/public/book.html')
+
+#BOOK
+@app.route('/book30')
+def book30():
+    return render_template('/public/book30min.html')
+
+#BOOK
+@app.route('/book60')
+def book60():
+    return render_template('/public/book60min.html')
+
+#BOOK
+@app.route('/book90')
+def book90():
+    return render_template('/public/book90min.html')
 
 #BLOG
 @app.route('/blog1')

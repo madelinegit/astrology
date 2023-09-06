@@ -1,12 +1,13 @@
 body {
 font-family: Arial, sans-serif;
 width: 100%;
+height: 100%;
 background-color: #393e46;
 color: #f7f7f7
 }
 @media (max-width: 576px) {
 body, p, .nav-link, .nav-title{
-    font-size: 12px;
+    font-size: 15px;
 }
 }
 @media (max-width: 576px) {
@@ -29,6 +30,12 @@ body, p, .nav-link, .nav-title{
     font-weight: bold;
     transform: scale(1.01);
 }
+.navbar-brand {
+    padding-left: 25px;
+}
+
+
+
 
 /* NEWSLETTER  STYLE*/
 
@@ -36,6 +43,7 @@ body, p, .nav-link, .nav-title{
     background: linear-gradient(to bottom,#ba8e4b, #000000);
     padding: 20px;
     margin: 0 auto;
+    text-shadow: 2px 2px 5px #393e46;
 }
 .newsform input {
     border-radius: 8px;
@@ -53,6 +61,21 @@ body, p, .nav-link, .nav-title{
     font-weight: bolder;
     background-color: #5c636e;
     box-shadow: 2px 2px 5px #ba8e4b;
+    transform: scale(1.01);
+    color: #f7f7f7;
+}
+
+.newform-button-2 {
+    background-color : #393e46;
+    text-decoration: none;
+    /* background: linear-gradient(to top, #8f1d14, #FCA311); */
+    color: #f7f7f7;
+    margin-left: 10px;
+}
+.newform-button-2:hover {
+    font-weight: bolder;
+    background-color: #5c636e;
+    box-shadow: 2px 2px 5px #393e46;
     transform: scale(1.01);
     color: #f7f7f7;
 }
@@ -75,7 +98,17 @@ body, p, .nav-link, .nav-title{
     align-items: center;
 }
 
+.footer-text {
+    text-shadow: 2px 2px 5px #ba8e4b;
+}
 
+.containerbook {
+    width: 60%;
+}
+
+.bookreading {
+    text-shadow: 2px 2px 5px #393e46;
+}
 
 
 

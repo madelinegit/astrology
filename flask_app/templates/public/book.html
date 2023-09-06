@@ -15,37 +15,55 @@
     <div class="container-fluid">
         <div class="justify-content-left">
             <a class="navbar-brand" style="color:antiquewhite" href="/" >
-                <img src="{{url_for('static', filename='imgs/logonav.png')}}" alt="" width="32" height="32" class="rounded-circle me-2">
+                <img src="{{url_for('static', filename='imgs/newlogo.jpeg')}}" alt="" width="32" height="32" class="rounded-circle me-2 icon">
             </a>
-                <a href="/" class="nav-title">Justin Jyotish Astrology</a>
+            <a href="/" class="nav-title">Justin Jyotish Astrology</a>
         </div>
-        <div class="d-flex justify-content-right">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a href="/about" class="nav-link">About</a>
-                </li>
-                <li class="nav-item">
-                    <a href="/menu" class="nav-link">Readings</a>
-                </li>
-                <li class="nav-item">
-                    <a href="/bloghome" class="nav-link">Blogs</a>
-                </li>
-                <li class="nav-item">
-                    <a href="/book" class="nav-link fw-bold">Schedule</a>
-                </li>
-            </ul>
+        <div>
+            <button class="navbar-toggler mb-2 " type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <div class="d-flex justify-content-right menu " >
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item active">
+                            <a href="/about" class="nav-link fw-bold">About</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a href="/menu" class="nav-link">Readings</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a href="/bloghome" class="nav-link">Blogs</a>
+                        </li>
+                        <!-- <li class="nav-item"> -->
+                            <!-- <a href="/book" class="nav-link">Schedule</a> -->
+                        <!-- </li> -->
+                    </ul>
+                </div>
+            </div>
         </div>
     </div>
 </nav>
 
 <div class="otherletter text-center">
-    <h3 class="text-center"><i> Schedule a reading...</i></h3>
-    <p class="text-center" ><br>A Jyotish reading will include a general calibration of the correct birth time, a look back into past events, current events manifesting in the life, and what to expect in the future. <br><br>Traditional remedies can be offered to balance karmic situations.<br><br> These may include Mantra, Donation, Ritual, Gems, and other practices. </p>
-    <p class="text-center pb-3" > <i>Select 1, 1.5 or 2hr reading, & choose a time: </i></p>
+    <div class="container mt-10px pb-3">
+        <div class="d-flex justify-content-center align-items-center pt-5 pb-3">
+            <img src="{{url_for('static', filename='imgs/rogue.png')}}" class="image-fluid logo" width = "600"alt="">
+        </div>
+        <!-- <div class="text-center"> -->
+            <!-- <h1></h1> -->
+            <!-- <h3 class="pb-5 pt-4 ancient">Ancient Astrology in the Modern World</h3> -->
+        <!-- </div> -->
+    </div>
+    <div class = "container containerbook">
+    <h3 class="text-center bookreading"><i> Schedule a reading...</i></h3>
+    <p class="text-center bookreading" ><br>A Jyotish reading will include a general calibration of the correct birth time, a look back into past events, current events manifesting in the life, and what to expect in the future. <br><br>Traditional remedies can be offered to balance karmic situations.<br><br> These may include Mantra, Donation, Ritual, Gems, and other practices. </p>
+    <p class="text-center pb-3 bookreading" > <i>Select 1, 1.5 or 2hr reading, & choose a time: </i></p>
+    </div>
     <div class="">
-    <a href="/book30"><button class="newform-button btn m-4"> Thirty Minute Reading </button></a>
-    <a href="/book60"><button class="newform-button btn m-4"> Sixty Minute Reading </button></a>
-    <a href="/book90"><button class="newform-button btn m-4"> Ninety Minute reading </button></a>
+    <a href="/book30"><button class="newform-button-2 btn m-4"> Thirty Minute Reading </button></a>
+    <a href="/book60"><button class="newform-button-2 btn m-4"> Sixty Minute Reading </button></a>
+    <a href="/book90"><button class="newform-button-2 btn m-4"> Ninety Minute Reading </button></a>
     </div>
     <!-- <div class="d-flex justify-content-left"> -->
         <!-- <a href="/menu"><button class="newform-button btn m-4"> &larr; Back to Menu </button></a> -->
@@ -71,5 +89,7 @@
     </div>
 </div>
 <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

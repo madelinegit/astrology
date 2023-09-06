@@ -1,10 +1,10 @@
 .ancient {
-    text-shadow: 2px 2px 5px #ff8b00;
+    text-shadow: 2px 2px 5px #ba8e4b;
 }
 .headshot {
     width:300px;
     border: #5c636e;
-    border: 2px solid #5c636e; Border properties
+    border: 2px solid #5c636e;
     box-shadow: 5px 5px 1px #888;
 }
 @media (max-width: 576px) {

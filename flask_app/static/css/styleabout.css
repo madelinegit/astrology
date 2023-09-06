@@ -1,3 +1,6 @@
+.about {
+    background-color: #ba8e4e;
+}
 
 h2 {
     font-size: 24px;
@@ -18,8 +21,8 @@ p {
     }
 }
 
-.ancient {
-    text-shadow: 2px 2px 5px #ff8b00;
+.abouttext {
+    text-shadow: 2px 2px 5px #000;
 }
 .headshot {
     width:300px;

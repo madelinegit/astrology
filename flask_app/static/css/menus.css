@@ -120,7 +120,7 @@ body {
 /* A mobile nav links */
 @media (max-width: 767px) {
     .book-button {
-        font-size: 10px;
+        font-size: 17px;
         padding: 0.1rem 0.2rem;
     }
 }

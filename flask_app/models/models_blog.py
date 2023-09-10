@@ -21,7 +21,7 @@ class Blog:
         self.image=data['image']
         self.created_at = data['created_at']
         self.updated_at = data['updated_at']
-        self.user=None
+        self.user = User.get_one_user({ 'id' : data['user_id'] })
 
     @classmethod
     def get_one_blog(cls, data):

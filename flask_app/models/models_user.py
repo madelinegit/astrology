@@ -8,11 +8,11 @@ PASSWORD_REGEX = re.compile("^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$")
 
 class User:
     def __init__(self, data):
-        self.id = data['id'],
-        self.firstname = data['firstname'],
-        self.email = data['email'],
-        self.password = data['password'],
-        self.created_at = data['created_at'],
+        self.id = data['id']
+        self.firstname = data['firstname']
+        self.email = data['email']
+        self.password = data['password']
+        self.created_at = data['created_at']
         self.updated_at = data['updated_at']
 
     #REGISTER USER
@@ -54,6 +54,15 @@ class User:
         results= connectToMySQL(db).query_db(query, data)
         if len(results) < 1:
             return False
+        return cls(results[0])
+
+    @classmethod
+    def get_one_user(cls, data):
+        query = """
+            SELECT * FROM users
+            WHERE id = %(id)s
+            """
+        results = connectToMySQL(db).query_db(query, data)
         return cls(results[0])
 
     #Validates New Admin Account from User Controller

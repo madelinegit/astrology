@@ -1,4 +1,6 @@
 from flask import Flask
+import os
+
 app= Flask(__name__)
 
-app.secret_key = "PyPy 3.14"
+app.secret_key = os.environ["FLASK_SECRET_KEY"]

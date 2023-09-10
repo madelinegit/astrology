@@ -56,6 +56,15 @@ class User:
             return False
         return cls(results[0])
 
+    @classmethod
+    def get_one_user(cls, data):
+        query = """
+            SELECT * FROM users
+            WHERE id = %(id)s
+            """
+        results = connectToMySQL(db).query_db(query, data)
+        return cls(results[0])
+
     #Validates New Admin Account from User Controller
     @staticmethod
     def validate(users):
